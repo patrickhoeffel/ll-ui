@@ -1,3 +1,133 @@
 page-home {
+  h2 {
+    color: color($colors, dark);
+    font-size: 1.7rem;
+    margin:10px 0 0;
+    small {
+      color: lighten(color($colors, dark), 20%);
+      font-weight: normal;
+    }
+  }
+
+  ion-list {
+    >ion-item-sliding {
+      border-bottom: 1px solid color($colors, light);
+
+      .item,
+      &:last-child .item {
+        border:none;
+        margin:0;
+      }
+
+      .completed {
+        text-decoration: line-through;
+        font-style: italic;
+      }
+    }
+  }
+
+  ion-textarea{
+    .text-input {
+      font-size: 1.6rem;
+      color: color($colors, dark);
+      margin:0;
+      padding:8px;
+      border:1px solid color($colors, light);
+      border-radius:3px;
+    }
+  }
+
+  div {
+    .item-searchbar {
+      white-space:nowrap;
+
+      button {
+        display: inline-block;
+      }
+      ion-searchbar {
+        display: inline-block;
+        width: 300px;
+      }
+    }
+    .item-breadcrumbs {
+      white-space:nowrap;
+      margin:0;
+      padding:2px;
+      border:1px solid color($colors, light);
+      width:100%;
+      p {
+        -webkit-margin-before: .2em;
+        -webkit-margin-after: .2em;
+        font-size: 1.7rem;
+      }
+    }
+    .item-wrapper {
+      white-space:nowrap;
+      display: inline-block;
+      margin:0;
+      padding-top:3px;
+      padding-left:3px;
+      border-radius:3px;
+      width:100%;
+    }
+    .bullet {
+      display: inline-block;
+      background-image: url(/assets/img/bullet.svg);
+      margin-left: 1px;
+      height: 18px;
+      width: 18px;
+      background-color: #e0e0e0;
+      border-radius: 12px;
+      vertical-align: middle;
+    }
+    .item-spacer {
+      white-space:nowrap;
+      display: inline-block;
+      margin:0;
+      padding:8px;
+      border:1px solid color($colors, light);
+      border-radius:3px;
+      width:50px;
+    }
+    .item-table {
+      width: 100%;
+    }
+    .item-bullet-column {
+      display: inline-block;
+      vertical-align: top;
+    }
+    .item-content-column {
+      display: inline-block;
+      vertical-align: top;
+      padding-left: 8px;
+      width:100%
+    }
+    .item-content {
+      display: inline-block;
+      line-height: 20px;
+      //vertical-align: middle;
+      width: 100%;
+    }
+    .item-note {
+      //display: inline-block;
+      line-height: 18px;
+      //vertical-align: middle;
+      width: 100%;
+      font-size: 1.3rem;
+    }
+    .item-marks {
+      display: inline-block;
+      margin:0;
+      //vertical-align: middle;
+    }
+    span {
+      display: inline-block;
+      line-height: 20px;
+    }
+    button {
+      display: inline-block;
+      background-color: transparent;
+    }
+  }
 
 }

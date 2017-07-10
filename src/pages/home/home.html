@@ -1,18 +1,45 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
+    <div class="item-searchbar">
+      <button ion-button menuToggle >
+        <ion-icon name="menu" ></ion-icon>
+      </button>
+      <ion-searchbar (ionInput)="searchForItems($event)"></ion-searchbar>
+    </div>
+    <div class="item-breadcrumbs">
+      <a href="#"><p>Home</p></a>
+    </div>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <h3>Welcome to Life Listory, Patrick!</h3>
 
   <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
+    The last lists you worked on were:
   </p>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <div id="list-top-level-wrapper">
+    <div class="item-wrapper" id="item-wrapper-{{item.uuid}}" *ngFor="let item of items" itemSpy>
+      <table>
+        <tr>
+          <td class="item-bullet-column">
+            <a class="bullet"></a>
+          </td>
+          <td class="item-content-column">
+            <div class="item-content" id="item-title-text-{{item.uuid}}" contenteditable (click)="setFocus($event, item)">{{item.title}}</div>
+            <div class="item-note" id="item-note-text-{{item.uuid}}" contenteditable (click)="setFocus($event, item)" *ngIf="item.note">{{item.note}}</div>
+            <!--
+                  <div class="item-marks">
+                    <button ion-button clear small (click)="expandCollapseMarks($event, item)" id="item-marks-{{item.uuid}}">...</button>
+                  </div>
+            -->
+            <div class="item-children" id="item-children-of-{{item.uuid}}" *ngIf="item.children">{{item.children.length}}</div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+
 </ion-content>
